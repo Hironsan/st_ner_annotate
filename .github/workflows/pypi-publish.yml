@@ -16,6 +16,7 @@ jobs:
         node-version: '12.x'
     - name: Build with Node.js
       run: |
+        yarn install
         yarn build
       working-directory: ./st_ner_annotate/frontend
     - name: Setup Python 3.10
