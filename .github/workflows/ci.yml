@@ -1,4 +1,4 @@
-name: doccano-mini CI
+name: Apply linters
 
 on: [push, pull_request]
 
