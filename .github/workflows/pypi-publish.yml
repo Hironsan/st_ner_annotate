@@ -1,8 +1,8 @@
 name: Upload Python Package
 
-on: [push]
-  # release:
-  #   types: [created]
+on:
+  release:
+    types: [created]
 
 jobs:
   deploy:
@@ -31,9 +31,9 @@ jobs:
     - name: Build a binary wheel and a source tarball
       run: |
         poetry build
-    # - name: Publish a Python distribution to PyPI
-    #   uses: pypa/gh-action-pypi-publish@master
-    #   with:
-    #     user: ${{ secrets.PYPI_USERNAME }}
-    #     password: ${{ secrets.PYPI_PASSWORD }}
-    #     packages_dir: ./dist/
+    - name: Publish a Python distribution to PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: ${{ secrets.PYPI_USERNAME }}
+        password: ${{ secrets.PYPI_PASSWORD }}
+        packages_dir: ./dist/
